@@ -5,5 +5,11 @@ define([
 ) {
     'use strict';
 
-    return Component;
+    return Component.extend({
+        initialize() {
+            this._super();
+
+            console.log('The skuLookup component has been loaded.');
+        }
+    });
 });
