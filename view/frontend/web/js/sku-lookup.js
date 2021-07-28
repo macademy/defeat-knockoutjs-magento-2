@@ -6,6 +6,9 @@ define([
     'use strict';
 
     return Component.extend({
+        defaults: {
+            sku: '<em>ABC' + (1 + 2 + 3) + '</em>'
+        },
         initialize() {
             this._super();
 
