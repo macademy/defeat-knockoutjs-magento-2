@@ -1,4 +1,5 @@
 <div class="sku-lookup">
     <h2>SKU Lookup</h2>
-    <div data-bind="html: sku"></div>
+    <input id="sku" name="sku" type="text" data-bind="textInput: sku"/>
+    <div data-bind="text: sku"></div>
 </div>
