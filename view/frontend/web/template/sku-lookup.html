@@ -3,6 +3,6 @@
     <form data-bind="submit: handleSubmit">
         <input id="sku" name="sku" type="text" data-bind="textInput: sku, attr: { placeholder: placeholder }"/>
         <button type="submit">Confirm SKU</button>
-        <div data-bind="text: sku"></div>
+        <div data-bind="html: messageResponse"></div>
     </form>
 </div>
