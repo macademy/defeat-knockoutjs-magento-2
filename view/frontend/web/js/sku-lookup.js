@@ -1,11 +1,13 @@
 define([
     'uiComponent',
     'ko',
-    'mage/storage'
+    'mage/storage',
+    'jquery'
 ], function(
     Component,
     ko,
-    storage
+    storage,
+    $
 ) {
     'use strict';
 
@@ -22,6 +24,7 @@ define([
             console.log('The skuLookup component has been loaded.');
         },
         handleSubmit() {
+            $('body').trigger('processStart');
             this.messageResponse('');
             this.isSuccess(false);
 
@@ -34,6 +37,9 @@ define([
                     this.messageResponse('Product not found.');
                     this.isSuccess(false);
                 })
+                .always(() => {
+                    $('body').trigger('processStop');
+                });
         }
     });
 });
