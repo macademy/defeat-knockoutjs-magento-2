@@ -1,10 +1,10 @@
 <div class="box-configurations">
     <h2 data-bind="i18n: 'Box Configurations'"></h2>
-    <ul data-bind="foreach: boxConfigurations">
-        <li>
+    <!-- ko foreach: boxConfigurations -->
+        <div>
             <!-- ko i18n: 'Configuration' --><!-- /ko -->
             <!-- ko text: $index() + 1 --><!-- /ko -->:
             <!-- ko text: $data --><!-- /ko -->
-        </li>
-    </ul>
+        </div>
+    <!-- /ko -->
 </div>
