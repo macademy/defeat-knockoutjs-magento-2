@@ -1,12 +1,10 @@
 <div class="box-configurations">
     <h2 data-bind="i18n: 'Box Configurations'"></h2>
-    <!-- ko foreach: boxConfigurations -->
+    <div data-bind="foreach: { data: boxConfigurations, as: 'boxConfiguration' }">
         <div>
             <!-- ko i18n: 'Configuration' --><!-- /ko -->
             <!-- ko text: $index() + 1 --><!-- /ko -->:
-            <span data-bind="text: length"></span>
-            x <span data-bind="text: width"></span>
-            x <span data-bind="text: height"></span>
+            <span data-bind="text: ko.toJSON(boxConfiguration)"></span>
         </div>
-    <!-- /ko -->
+    </div>
 </div>
