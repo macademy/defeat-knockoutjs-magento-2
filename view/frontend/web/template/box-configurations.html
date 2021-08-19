@@ -1,12 +1,33 @@
 <div class="box-configurations">
     <h2 data-bind="i18n: 'Box Configurations'"></h2>
-    <span data-bind="text: console.log('data', $data)"></span>
-    <div data-bind="foreach: { data: boxConfigurations, as: 'boxConfiguration' }">
-        <div>
-            <!-- ko i18n: 'Configuration' --><!-- /ko -->
-            <!-- ko text: $index() + 1 --><!-- /ko -->:
-            <span data-bind="text: ko.toJSON(boxConfiguration)"></span>
-            <span data-bind="text: console.log('parent', $parent)"></span>
-        </div>
-    </div>
+    <table>
+        <thead>
+            <tr>
+                <th data-bind="i18n: 'Units per box'"></th>
+                <th data-bind="i18n: 'Number of boxes'"></th>
+                <th data-bind="i18n: 'Box weight (lb.)'"></th>
+                <th data-bind="i18n: 'Box dimensions (in.)'"></th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: boxConfigurations">
+            <tr>
+                <td>
+                    <input name="units_per_box" type="number" data-bind="textInput: unitsPerBox"/>
+                </td>
+                <td>
+                    <input name="number_of_boxes" type="number" data-bind="textInput: numberOfBoxes"/>
+                </td>
+                <td>
+                    <input name="weight" type="number" data-bind="textInput: weight"/>
+                </td>
+                <td>
+                    <input name="length" type="number" data-bind="textInput: length"/>
+                    x
+                    <input name="width" type="number" data-bind="textInput: width"/>
+                    x
+                    <input name="height" type="number" data-bind="textInput: height"/>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
