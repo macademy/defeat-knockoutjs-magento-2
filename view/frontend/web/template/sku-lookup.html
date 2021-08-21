@@ -2,7 +2,7 @@
     <h2 data-bind="i18n: 'SKU Lookup'"></h2>
     <form data-bind="submit: handleSubmit">
         <input id="sku" name="sku" type="text" data-bind="textInput: sku, attr: { placeholder: placeholder }"/>
-        <button type="submit"><!-- ko i18n: 'Confirm SKU' --><!-- /ko --></button>
-        <div data-bind="html: messageResponse, style: { color: isSuccess() ? 'green' : 'red' }"></div>
+        <button class="action primary" type="submit"><!-- ko i18n: 'Confirm SKU' --><!-- /ko --></button>
+        <div class="message-response" data-bind="html: messageResponse, style: { color: isSuccess() ? 'green' : 'red' }"></div>
     </form>
 </div>
