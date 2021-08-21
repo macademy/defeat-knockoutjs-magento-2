@@ -26,6 +26,9 @@ define([
             this._super();
 
             console.log('The boxConfigurations component has been loaded.');
+        },
+        handleAdd() {
+            this.boxConfigurations.push(boxConfiguration());
         }
     });
 });
