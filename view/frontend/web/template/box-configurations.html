@@ -7,6 +7,7 @@
                 <th data-bind="i18n: 'Number of boxes'"></th>
                 <th data-bind="i18n: 'Box weight (lb.)'"></th>
                 <th data-bind="i18n: 'Box dimensions (in.)'"></th>
+                <th></th>
             </tr>
         </thead>
         <tbody data-bind="foreach: boxConfigurations">
@@ -26,6 +27,9 @@
                     <input name="width" type="number" data-bind="textInput: width"/>
                     x
                     <input name="height" type="number" data-bind="textInput: height"/>
+                </td>
+                <td>
+                    <a data-bind="click: $parent.handleDelete.bind($parent, $index())"><!-- ko i18n: 'Delete' --><!-- /ko --></a>
                 </td>
             </tr>
         </tbody>

@@ -29,6 +29,9 @@ define([
         },
         handleAdd() {
             this.boxConfigurations.push(boxConfiguration());
+        },
+        handleDelete(index) {
+            this.boxConfigurations.splice(index, 1);
         }
     });
 });
