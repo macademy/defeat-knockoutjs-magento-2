@@ -30,7 +30,7 @@
                         <input name="height" type="number" data-bind="textInput: height"/>
                     </td>
                     <td>
-                        <a data-bind="click: $parent.handleDelete.bind($parent, $index())"><!-- ko i18n: 'Delete' --><!-- /ko --></a>
+                        <a class="action delete" data-bind="click: $parent.handleDelete.bind($parent, $index())"><!-- ko i18n: 'Delete' --><!-- /ko --></a>
                     </td>
                 </tr>
             </tbody>
