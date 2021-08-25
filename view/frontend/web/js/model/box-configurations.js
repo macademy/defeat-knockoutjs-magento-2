@@ -19,6 +19,16 @@ define([
             return Math.round(result * data.numberOfBoxes());
         });
 
+        data.totalWeight = ko.computed(() =>
+            data.numberOfBoxes() * data.weight()
+        );
+
+        data.billableWeight = ko.computed(() => {
+            return data.totalWeight() > data.dimensionalWeight()
+                ? data.totalWeight()
+                : data.dimensionalWeight();
+        });
+
         return data;
     };
 
