@@ -3,22 +3,24 @@ define([
     'ko',
     'mage/storage',
     'jquery',
-    'mage/translate'
+    'mage/translate',
+    'Macademy_InventoryFulfillment/js/model/sku'
 ], function(
     Component,
     ko,
     storage,
     $,
-    $t
+    $t,
+    skuModel
 ) {
     'use strict';
 
     return Component.extend({
         defaults: {
-            sku: ko.observable('24-MB01'),
+            sku: skuModel.sku,
             placeholder: $t('Example: %1').replace('%1', '24-MB01'),
             messageResponse: ko.observable(''),
-            isSuccess: ko.observable(false)
+            isSuccess: skuModel.isSuccess
         },
         initialize() {
             this._super();
