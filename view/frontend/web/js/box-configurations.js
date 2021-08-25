@@ -1,11 +1,13 @@
 define([
     'uiComponent',
     'ko',
-    'Macademy_InventoryFulfillment/js/model/box-configurations'
+    'Macademy_InventoryFulfillment/js/model/box-configurations',
+    'Macademy_InventoryFulfillment/js/model/sku'
 ], function(
     Component,
     ko,
-    boxConfigurationsModel
+    boxConfigurationsModel,
+    skuModel
 ) {
     'use strict';
 
@@ -17,6 +19,14 @@ define([
             this._super();
 
             console.log('The boxConfigurations component has been loaded.');
+
+            skuModel.isSuccess.subscribe((value) => {
+                console.log('SKU isSuccess new value', value);
+            });
+
+            skuModel.isSuccess.subscribe((value) => {
+                console.log('SKU isSuccess old value', value);
+            }, null, 'beforeChange');
         },
         handleAdd() {
             boxConfigurationsModel.add();
