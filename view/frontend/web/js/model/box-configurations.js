@@ -36,6 +36,7 @@ define([
 
     return {
         boxConfigurations: ko.observableArray([boxConfiguration()]),
+        isSuccess: ko.observable(false),
         add: function() {
             this.boxConfigurations.push(boxConfiguration());
         },
