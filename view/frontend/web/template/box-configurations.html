@@ -14,20 +14,20 @@
             <tbody data-bind="foreach: boxConfigurationsModel.boxConfigurations">
                 <tr>
                     <td>
-                        <input name="units_per_box" type="number" class="required-entry validate-greater-than-zero" data-bind="textInput: unitsPerBox"/>
+                        <input type="number" class="required-entry validate-greater-than-zero" data-bind="textInput: unitsPerBox, attr: { name: 'units_per_box_' + $index() }" />
                     </td>
                     <td>
-                        <input name="number_of_boxes" type="number" class="required-entry validate-greater-than-zero" data-bind="textInput: numberOfBoxes"/>
+                        <input type="number" class="required-entry validate-greater-than-zero" data-bind="textInput: numberOfBoxes, attr: { name: 'number_of_boxes_' + $index() }"/>
                     </td>
                     <td>
-                        <input name="weight" type="number" class="required-entry validate-greater-than-zero" data-bind="textInput: weight"/>
+                        <input type="number" class="required-entry validate-greater-than-zero" data-bind="textInput: weight, attr: { name: 'weight_' + $index() }"/>
                     </td>
                     <td>
-                        <input name="length" type="number" class="required-entry validate-greater-than-zero" data-bind="textInput: length"/>
+                        <input type="number" class="required-entry validate-greater-than-zero" data-bind="textInput: length, attr: { name: 'length_' + $index() }"/>
                         x
-                        <input name="width" type="number" class="required-entry validate-greater-than-zero" data-bind="textInput: width"/>
+                        <input type="number" class="required-entry validate-greater-than-zero" data-bind="textInput: width, attr: { name: 'width_' + $index() }"/>
                         x
-                        <input name="height" type="number" class="required-entry validate-greater-than-zero" data-bind="textInput: height"/>
+                        <input type="number" class="required-entry validate-greater-than-zero" data-bind="textInput: height, attr: { name: 'height_' + $index() }"/>
                     </td>
                     <td>
                         <a class="action delete" data-bind="click: $parent.handleDelete.bind($parent, $index())"><!-- ko i18n: 'Delete' --><!-- /ko --></a>
