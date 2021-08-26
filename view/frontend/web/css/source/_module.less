@@ -26,5 +26,27 @@
             cursor: pointer;
             color: @color-red12;
         }
+        table {
+            margin-bottom: 28px;
+        }
+        td {
+            position: relative;
+        }
+        input[aria-invalid="true"] {
+            border: 1px solid @color-red12;
+        }
+        label.error {
+            position: absolute;
+            width: 100%;
+            display: block;
+            margin-top: 3px;
+            font-size: 1.2rem;
+            line-height: 1.2rem;
+            font-weight: 400;
+            color: @color-red12;
+        }
+        button.primary {
+            margin-left: 6px;
+        }
     }
 }

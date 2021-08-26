@@ -14,20 +14,20 @@
             <tbody data-bind="foreach: boxConfigurationsModel.boxConfigurations">
                 <tr>
                     <td>
-                        <input name="units_per_box" type="number" data-bind="textInput: unitsPerBox"/>
+                        <input name="units_per_box" type="number" class="required-entry validate-greater-than-zero" data-bind="textInput: unitsPerBox"/>
                     </td>
                     <td>
-                        <input name="number_of_boxes" type="number" data-bind="textInput: numberOfBoxes"/>
+                        <input name="number_of_boxes" type="number" class="required-entry validate-greater-than-zero" data-bind="textInput: numberOfBoxes"/>
                     </td>
                     <td>
-                        <input name="weight" type="number" data-bind="textInput: weight"/>
+                        <input name="weight" type="number" class="required-entry validate-greater-than-zero" data-bind="textInput: weight"/>
                     </td>
                     <td>
-                        <input name="length" type="number" data-bind="textInput: length"/>
+                        <input name="length" type="number" class="required-entry validate-greater-than-zero" data-bind="textInput: length"/>
                         x
-                        <input name="width" type="number" data-bind="textInput: width"/>
+                        <input name="width" type="number" class="required-entry validate-greater-than-zero" data-bind="textInput: width"/>
                         x
-                        <input name="height" type="number" data-bind="textInput: height"/>
+                        <input name="height" type="number" class="required-entry validate-greater-than-zero" data-bind="textInput: height"/>
                     </td>
                     <td>
                         <a class="action delete" data-bind="click: $parent.handleDelete.bind($parent, $index())"><!-- ko i18n: 'Delete' --><!-- /ko --></a>
