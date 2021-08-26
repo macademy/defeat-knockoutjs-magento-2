@@ -1,0 +1,41 @@
+<div class="review-submit">
+    <h2 data-bind="i18n: 'Review & Submit'"></h2>
+    <p><!-- ko i18n: 'Please review the box configurations before submitting.' --><!-- /ko --></p>
+    <form data-bind="submit: handleSubmit">
+        <table>
+            <thead>
+                <tr>
+                    <th data-bind="i18n: 'Number of boxes'"></th>
+                    <th data-bind="i18n: 'Shipment weight'"></th>
+                    <th data-bind="i18n: 'Billable weight'"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span data-bind="text: numberOfBoxes"></span>
+                    </td>
+                    <td>
+                        <span data-bind="text: shipmentWeight"></span>
+                        <!-- ko i18n: 'lb.' --><!-- /ko -->
+                    </td>
+                    <td>
+                        <span data-bind="text: billableWeight"></span>
+                        <!-- ko i18n: 'lb.' --><!-- /ko -->
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="checkbox" data-bind="checked: isTermsChecked"/>
+                        <!-- ko i18n: 'I agree to the Terms & Conditions.'--><!-- /ko -->
+                    </td>
+                    <td>
+                        <button class="action primary" type="submit" data-bind="enable: canSubmit()">
+                            <!-- ko i18n: 'Accept shipping plan' --><!-- /ko -->
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
