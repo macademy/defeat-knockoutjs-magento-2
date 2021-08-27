@@ -13,6 +13,7 @@ define([
 
     return Component.extend({
         defaults: {
+            numberOfBoxes: boxConfigurationsModel.numberOfBoxes(),
             shipmentWeight: 0,
             billableWeight: 0,
             isTermsChecked: ko.observable(false)
@@ -26,12 +27,6 @@ define([
                 return skuModel.isSuccess()
                     && boxConfigurationsModel.isSuccess()
                     && this.isTermsChecked();
-            });
-
-            this.numberOfBoxes = ko.computed(() => {
-                return boxConfigurationsModel.boxConfigurations().reduce(function(runningTotal, boxConfiguration) {
-                    return runningTotal + (boxConfiguration.numberOfBoxes() || 0);
-                }, 0);
             });
         },
         handleSubmit() {
