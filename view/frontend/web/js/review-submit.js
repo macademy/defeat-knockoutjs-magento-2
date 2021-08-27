@@ -14,8 +14,8 @@ define([
     return Component.extend({
         defaults: {
             numberOfBoxes: boxConfigurationsModel.numberOfBoxes(),
-            shipmentWeight: 0,
-            billableWeight: 0,
+            shipmentWeight: boxConfigurationsModel.shipmentWeight(),
+            billableWeight: boxConfigurationsModel.billableWeight(),
             isTermsChecked: ko.observable(false)
         },
         initialize() {
