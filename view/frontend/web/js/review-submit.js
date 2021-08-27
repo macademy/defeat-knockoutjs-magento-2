@@ -2,12 +2,14 @@ define([
     'uiComponent',
     'ko',
     'Macademy_InventoryFulfillment/js/model/sku',
-    'Macademy_InventoryFulfillment/js/model/box-configurations'
+    'Macademy_InventoryFulfillment/js/model/box-configurations',
+    'mage/url'
 ], function(
     Component,
     ko,
     skuModel,
-    boxConfigurationsModel
+    boxConfigurationsModel,
+    url
 ) {
     'use strict';
 
@@ -17,7 +19,9 @@ define([
             shipmentWeight: boxConfigurationsModel.shipmentWeight(),
             billableWeight: boxConfigurationsModel.billableWeight(),
             isTermsChecked: ko.observable(false),
-            boxConfigurationsIsSuccess: boxConfigurationsModel.isSuccess
+            boxConfigurationsIsSuccess: boxConfigurationsModel.isSuccess,
+            boxConfigurations: boxConfigurationsModel.boxConfigurations,
+            sku: skuModel.sku
         },
         initialize() {
             this._super();
@@ -33,9 +37,13 @@ define([
         handleSubmit() {
             if (this.canSubmit()) {
                 console.log('The Review Submit form has been submitted.');
+                return true;
             } else {
                 console.log('The Review Submit form has an error.');
             }
+        },
+        getUrl() {
+            return url.build('inventory-fulfillment/index/post');
         }
     });
 });
