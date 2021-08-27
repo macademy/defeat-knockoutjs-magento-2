@@ -1,3 +1,4 @@
+<!-- ko if: skuModel.isSuccess() -->
 <div class="box-configurations">
     <h2 data-bind="i18n: 'Box Configurations'"></h2>
     <form data-bind="submit: handleSubmit">
@@ -30,7 +31,7 @@
                         <input type="number" class="required-entry validate-greater-than-zero" data-bind="textInput: height, attr: { name: 'height_' + $index() }"/>
                     </td>
                     <td>
-                        <a class="action delete" data-bind="click: $parent.handleDelete.bind($parent, $index())"><!-- ko i18n: 'Delete' --><!-- /ko --></a>
+                        <a class="action delete" data-bind="click: $parent.handleDelete.bind($parent, $index()), visible: $index() > 0"><!-- ko i18n: 'Delete' --><!-- /ko --></a>
                     </td>
                 </tr>
             </tbody>
@@ -39,3 +40,4 @@
         <button class="action primary" type="submit"><!-- ko i18n: 'Confirm' --><!-- /ko --></button>
     </form>
 </div>
+<!-- /ko -->
