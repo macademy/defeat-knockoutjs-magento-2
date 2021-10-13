@@ -21,7 +21,7 @@ define([
         });
 
         data.totalWeight = ko.computed(() =>
-            data.numberOfBoxes() * data.weight()
+            return data.numberOfBoxes() * data.weight()
         );
 
         data.billableWeight = ko.computed(() => {
